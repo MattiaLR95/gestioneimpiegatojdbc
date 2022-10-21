@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Compagnia {
-	private long id;
+	private Long id;
 	private String ragioneSociale;
 	private int fatturatoAnnuo;
 	private Date dataFondazione;
@@ -14,7 +14,7 @@ public class Compagnia {
 		super();
 	}
 
-	public Compagnia(long id, String ragioneSociale, int fatturatoAnnuo, java.util.Date dataFondazione) {
+	public Compagnia(Long id, String ragioneSociale, int fatturatoAnnuo, java.util.Date dataFondazione) {
 		super();
 		this.id = id;
 		this.ragioneSociale = ragioneSociale;
@@ -22,7 +22,14 @@ public class Compagnia {
 		this.dataFondazione = dataFondazione;
 	}
 
-	public Compagnia(long id, String ragioneSociale, int fatturatoAnnuo, java.util.Date dataFondazione,
+	public Compagnia(String ragioneSociale, int fatturatoAnnuo, Date dataFondazione) {
+		super();
+		this.ragioneSociale = ragioneSociale;
+		this.fatturatoAnnuo = fatturatoAnnuo;
+		this.dataFondazione = dataFondazione;
+	}
+
+	public Compagnia(Long id, String ragioneSociale, int fatturatoAnnuo, java.util.Date dataFondazione,
 			List<Impiegato> impiegati) {
 		super();
 		this.id = id;
@@ -32,11 +39,11 @@ public class Compagnia {
 		this.impiegati = impiegati;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -72,4 +79,11 @@ public class Compagnia {
 		this.impiegati = impiegati;
 	}
 
+	@Override
+	public String toString() {
+		return "Compagnia [id=" + id + ", ragioneSociale=" + ragioneSociale + ", fatturatoAnnuo=" + fatturatoAnnuo
+				+ ", dataFondazione=" + dataFondazione + ", impiegati=" + impiegati + "]";
+	}
+
+	
 }

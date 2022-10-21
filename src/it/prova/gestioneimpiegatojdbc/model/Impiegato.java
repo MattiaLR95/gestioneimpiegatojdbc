@@ -3,11 +3,11 @@ package it.prova.gestioneimpiegatojdbc.model;
 import java.util.Date;
 
 public class Impiegato {
-	private long id;
+	private Long id;
 	private String nome;
 	private String cognome;
 	private String codiceFiscale;
-	private Date dataDiNascita;
+	private Date dataNascita;
 	private Date dataAssunzione;
 	private Compagnia compagnia;
 
@@ -15,34 +15,47 @@ public class Impiegato {
 		super();
 	}
 
-	public Impiegato(long id, String nome, String cognome, String codiceFiscale, Date dataDiNascita,
+	public Impiegato(Long id, String nome, String cognome, String codiceFiscale, Date dataDiNascita,
 			Date dataAssunzione) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.codiceFiscale = codiceFiscale;
-		this.dataDiNascita = dataDiNascita;
+		this.dataNascita = dataDiNascita;
 		this.dataAssunzione = dataAssunzione;
 	}
+	
+	
 
-	public Impiegato(long id, String nome, String cognome, String codiceFiscale, Date dataDiNascita,
+	public Impiegato(String nome, String cognome, String codiceFiscale, Date dataNascita, Date dataAssunzione,
+			Compagnia compagnia) {
+		super();
+		this.nome = nome;
+		this.cognome = cognome;
+		this.codiceFiscale = codiceFiscale;
+		this.dataNascita = dataNascita;
+		this.dataAssunzione = dataAssunzione;
+		this.compagnia = compagnia;
+	}
+
+	public Impiegato(Long id, String nome, String cognome, String codiceFiscale, Date dataDiNascita,
 			Date dataAssunzione, Compagnia compagnia) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.codiceFiscale = codiceFiscale;
-		this.dataDiNascita = dataDiNascita;
+		this.dataNascita = dataDiNascita;
 		this.dataAssunzione = dataAssunzione;
 		this.compagnia = compagnia;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -70,12 +83,12 @@ public class Impiegato {
 		this.codiceFiscale = codiceFiscale;
 	}
 
-	public Date getDataDiNascita() {
-		return dataDiNascita;
+	public Date getDataNascita() {
+		return dataNascita;
 	}
 
-	public void setDataDiNascita(Date dataDiNascita) {
-		this.dataDiNascita = dataDiNascita;
+	public void setDataNascita(Date dataDiNascita) {
+		this.dataNascita = dataDiNascita;
 	}
 
 	public Date getDataAssunzione() {
@@ -94,4 +107,12 @@ public class Impiegato {
 		this.compagnia = compagnia;
 	}
 
+	@Override
+	public String toString() {
+		return "\n Impiegato [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", codiceFiscale=" + codiceFiscale
+				+ ", dataNascita=" + dataNascita + ", dataAssunzione=" + dataAssunzione + ", compagnia=" + compagnia
+				+ "]";
+	}
+
+	
 }
